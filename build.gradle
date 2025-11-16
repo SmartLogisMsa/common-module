@@ -37,7 +37,11 @@ publishing {
     repositories {
         maven {
             name = "GithubPackages"
-            url = uri("https://maven.pkg.github/test1980235/common-module")
+            url = uri("https://maven.pkg.github.com/test1980235/common-module")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
+                password = project.findProperty("gpr.token") ?: System.getenv("GITHUB_TOKEN")
+            }
         }
     }
 }
