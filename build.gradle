@@ -45,3 +45,15 @@ publishing {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+tasks.named('jar') {
+    enabled = true
+}
+
+tasks.named('bootJar') {
+    enabled = false
+}
+
+tasks.withType(GenerateModuleMetadata) {
+    suppressedValidationErrors.add('dependencies-without-versions')
+}
