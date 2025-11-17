@@ -43,19 +43,18 @@ public class AuthenticatedUser implements UserDetails {
 
 ### 3.Security Config
 ```java
-@Configuration
-@EnableWebSecurity
-public class SecurityConfig {
-
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        return http
-                .csrf(AbstractHttpConfigurer::disable)
-                .addFilterBefore(new HeaderAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
-                .authorizeHttpRequests(auth -> auth
-                        .anyRequest().authenticated()
-                )
-                .build();
-    }
+@Bean
+@ConditionalOnMissingBean
+public SecurityFilterChain securityFilterChain(HttpSecurity http,
+    RestAccessDeniedHandler restAccessDeniedHandler) throws Exception {
+        return http.csrf(csrf -> csrf.disable())
+            .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
+            .addFilterBefore(headerAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+            .sessionManagement(c -> c.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+            .exceptionHandling(c -> {
+                c.authenticationEntryPoint(restAuthenticationEntryPoint);
+		c.accessDeniedHandler(restAccessDeniedHandler);
+            })
+        .build();
 }
 ```
