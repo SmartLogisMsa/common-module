@@ -14,7 +14,7 @@ repositories {
     mavenCentral()
     maven {
         name = "GitHubPackages"
-        url = uri("https://maven.pkg.github.com/SmartLogisMsa/common-module")
+        url = uri("https://maven.pkg.github.com/smartlogismsa/common-module")
         credentials {
             username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
             password = project.findProperty("gpr.token") ?: System.getenv("GITHUB_TOKEN")
@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.smartlogis:common-module:0.0.4'
+    implementation 'com.smartlogis:common-module:0.0.5'
 }
 ```
 
@@ -52,7 +52,7 @@ application.yml
 
 ```yaml
 gpr:
-  username: ${GITHUB_ACTOR}
+  user: ${GITHUB_ACTOR}
   token: ${GH_PAT}
 ```
 

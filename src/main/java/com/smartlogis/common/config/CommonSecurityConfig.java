@@ -26,24 +26,6 @@ public class CommonSecurityConfig {
 
 	@Bean
 	@ConditionalOnMissingBean
-	public HeaderAuthenticationFilter headerAuthenticationFilter() {
-		return new HeaderAuthenticationFilter();
-	}
-
-	@Bean
-	@ConditionalOnMissingBean
-	public RestAuthenticationEntryPoint restAuthenticationEntryPoint() {
-		return new RestAuthenticationEntryPoint();
-	}
-
-	@Bean
-	@ConditionalOnMissingBean
-	public RestAccessDeniedHandler restAccessDeniedHandler() {
-		return new RestAccessDeniedHandler();
-	}
-
-	@Bean
-	@ConditionalOnMissingBean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http,
 		RestAccessDeniedHandler restAccessDeniedHandler) throws Exception {
 		return http.csrf(csrf -> csrf.disable())
