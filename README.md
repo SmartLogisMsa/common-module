@@ -12,18 +12,11 @@ build.gradle
 ```groovy
 repositories {
     mavenCentral()
-    maven {
-        name = "GitHubPackages"
-        url = uri("https://maven.pkg.github.com/smartlogismsa/common-module")
-        credentials {
-            username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
-            password = project.findProperty("gpr.token") ?: System.getenv("GITHUB_TOKEN")
-        }
-    }
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    implementation 'com.smartlogis:common-module:0.0.6'
+    implementation 'com.github.smartlogismsa:common-module:0.0.2'
 }
 ```
 
@@ -32,38 +25,14 @@ dependencies {
 ### 주의사항
 
 - common-module 버전을 꼭 확인하고 사용해주세요.
+- [JitPack](https://jitpack.io/#smartlogismsa/common-module) 에서 최신 버전 확인 가능합니다.
 - 아래 의존성들은 common-module 내부에 포함되어 있습니다. 중복 선언 시 충돌 가능성이 있으므로 확인해주세요.
 
 ```groovy
-  implementation 'org.springframework.boot:spring-boot-starter'
-implementation 'org.springframework.boot:spring-boot-starter-security'
-implementation 'org.springframework.boot:spring-boot-starter-web'
-implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-
-compileOnly('org.projectlombok:lombok:1.18.42')
-annotationProcessor 'org.projectlombok:lombok:1.18.42'
-```
-
-<br>
-
-## 인증 정보 설정
-
-application.yml
-
-```yaml
-gpr:
-  user: ${GITHUB_ACTOR}
-  token: ${GH_PAT}
-```
-
-<br>
-
-github actions
-
-```yaml
-env:
-  GITHUB_ACTION: ${{ github.actor }}
-  GH_PAT: ${{ secrets.GH_PAT }}
+api 'org.springframework.boot:spring-boot-starter'
+api 'org.springframework.boot:spring-boot-starter-web'
+api 'org.springframework.boot:spring-boot-starter-data-jpa'
+api 'org.springframework.boot:spring-boot-starter-security'
 ```
 
 <br>
