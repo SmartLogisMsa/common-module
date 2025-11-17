@@ -53,7 +53,7 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http,
             .sessionManagement(c -> c.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .exceptionHandling(c -> {
                 c.authenticationEntryPoint(restAuthenticationEntryPoint);
-		c.accessDeniedHandler(restAccessDeniedHandler);
+		        c.accessDeniedHandler(restAccessDeniedHandler);
             })
         .build();
 }
