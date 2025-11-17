@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.smartlogis:common-module:0.0.5'
+    implementation 'com.smartlogis:common-module:0.0.6'
 }
 ```
 
