@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.smartlogismsa:common-module:0.0.2'
+    implementation 'com.github.smartlogismsa:common-module:0.0.3'
 }
 ```
 
@@ -33,6 +33,37 @@ api 'org.springframework.boot:spring-boot-starter'
 api 'org.springframework.boot:spring-boot-starter-web'
 api 'org.springframework.boot:spring-boot-starter-data-jpa'
 api 'org.springframework.boot:spring-boot-starter-security'
+api 'org.springframework.boot:spring-boot-starter-aop'
+
+// eureka, config client
+api 'org.springframework.cloud:spring-cloud-starter-config'
+api 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+
+// openfeign, loadbalancer
+api 'org.springframework.cloud:spring-cloud-starter-openfeign'
+api 'org.springframework.cloud:spring-cloud-starter-loadbalancer'
+
+// resilience4j
+api 'io.github.resilience4j:resilience4j-spring-boot3'
+api 'io.github.resilience4j:resilience4j-circuitbreaker'
+api 'io.github.resilience4j:resilience4j-retry'
+api 'io.github.resilience4j:resilience4j-bulkhead'
+api 'io.github.resilience4j:resilience4j-ratelimiter'
+api 'io.micrometer:micrometer-core'
+api 'io.micrometer:micrometer-registry-prometheus'
+
+// monitoring
+api 'org.springframework.boot:spring-boot-starter-actuator'
+api 'io.micrometer:micrometer-registry-prometheus'
+api 'io.micrometer:micrometer-tracing-bridge-brave'
+api 'io.zipkin.reporter2:zipkin-reporter-brave'
+api 'com.github.loki4j:loki-logback-appender:2.0.0'
+
+// rabbitmq
+api 'org.springframework.boot:spring-boot-starter-amqp'
+api 'org.springframework.cloud:spring-cloud-starter-stream-rabbit'
+api 'org.springframework.retry:spring-retry'
+api 'org.springframework:spring-aspects'
 ```
 
 <br>
