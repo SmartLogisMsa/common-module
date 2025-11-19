@@ -26,7 +26,7 @@ dependencyManagement {
 }
 
 dependencies {
-    implementation 'com.github.smartlogismsa:common-module:0.0.5'
+    implementation 'com.github.smartlogismsa:common-module:0.0.6'
 }
 ```
 
