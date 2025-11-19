@@ -15,8 +15,18 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 
+ext {
+    set('springCloudVersion', "2025.0.0")
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
 dependencies {
-    implementation 'com.github.smartlogismsa:common-module:0.0.3'
+    implementation 'com.github.smartlogismsa:common-module:0.0.5'
 }
 ```
 
@@ -77,3 +87,4 @@ api 'org.springframework:spring-aspects'
 | **예외 처리 가이드**  | `GlobalException`, `GlobalExceptionHandler` 사용 방법    | [docs/GlobalException.md](docs/GlobalException.md) |
 | **인증/보안 구성**   | `HeaderAuthenticationFilter`, `AuthenticatedUser` 설명 | [docs/SpringSecurity.md](docs/SpringSecurity.md)   |
 | **공통 엔티티 가이드** | `AbstractEntity` 감사/삭제 처리 설명                         | [docs/AbstractEntity.md](docs/AbstractEntity.md)   |
+| **공통 Page DTO**| `PageRequest`, `PageResponse` ||
