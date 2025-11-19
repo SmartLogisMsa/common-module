@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.smartlogismsa:common-module:0.0.3'
+    implementation 'com.github.smartlogismsa:common-module:0.0.6'
 }
 ```
 
