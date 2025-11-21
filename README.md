@@ -26,7 +26,7 @@ dependencyManagement {
 }
 
 dependencies {
-    implementation 'com.github.smartlogismsa:common-module:0.0.6'
+    implementation 'com.github.smartlogismsa:common-module:0.0.7'
 }
 ```
 
@@ -81,10 +81,14 @@ api 'org.springframework:spring-aspects'
 
 ## 제공 기능 목록
 
-| 문서             | 설명                                                   | 링크                                                 |
-|----------------|------------------------------------------------------|----------------------------------------------------|
-| **API 응답 규칙**  | `ApiResponse` 구조와 메시지 전략 설명                          | [docs/ApiResponse.md](docs/ApiResponse.md)         |
-| **예외 처리 가이드**  | `GlobalException`, `GlobalExceptionHandler` 사용 방법    | [docs/GlobalException.md](docs/GlobalException.md) |
-| **인증/보안 구성**   | `HeaderAuthenticationFilter`, `AuthenticatedUser` 설명 | [docs/SpringSecurity.md](docs/SpringSecurity.md)   |
-| **공통 엔티티 가이드** | `AbstractEntity` 감사/삭제 처리 설명                         | [docs/AbstractEntity.md](docs/AbstractEntity.md)   |
-| **공통 Page DTO**| `PageRequest`, `PageResponse` ||
+| 문서              | 설명                                                   | 링크                                                 |
+|-----------------|------------------------------------------------------|----------------------------------------------------|
+| **API 응답 규칙**   | `ApiResponse` 구조와 메시지 전략 설명                          | [docs/ApiResponse.md](docs/ApiResponse.md)         |
+| **예외 처리 가이드**   | `GlobalException`, `GlobalExceptionHandler` 사용 방법    | [docs/GlobalException.md](docs/GlobalException.md) |
+| **인증/보안 구성**    | `HeaderAuthenticationFilter`, `AuthenticatedUser` 설명 | [docs/SpringSecurity.md](docs/SpringSecurity.md)   |
+| **공통 엔티티 가이드**  | `AbstractEntity` 감사/삭제 처리 설명                         | [docs/AbstractEntity.md](docs/AbstractEntity.md)   |
+| **공통 Page DTO** | `PageRequest`, `PageResponse`                        |                                                    |
+
+## 버전 업데이트
+
+- v0.0.7: FeignConfig 추가 - FeignClient 헤더 인증 정보 추가
