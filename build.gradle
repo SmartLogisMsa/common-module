@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.smartlogis'
-version = '0.0.7'
+version = '0.0.8'
 
 java {
     toolchain {
@@ -48,6 +48,11 @@ dependencies {
     api 'io.github.resilience4j:resilience4j-retry:2.3.0'
     api 'io.github.resilience4j:resilience4j-bulkhead:2.3.0'
     api 'io.github.resilience4j:resilience4j-ratelimiter:2.3.0'
+
+    api 'com.querydsl:querydsl-jpa:5.1.0:jakarta'
+    annotationProcessor "com.querydsl:querydsl-apt:5.1.0:jakarta"
+    annotationProcessor "jakarta.annotation:jakarta.annotation-api"
+    annotationProcessor "jakarta.persistence:jakarta.persistence-api"
 
     api 'io.micrometer:micrometer-core:1.16.0'
     api 'io.micrometer:micrometer-registry-prometheus:1.16.0'

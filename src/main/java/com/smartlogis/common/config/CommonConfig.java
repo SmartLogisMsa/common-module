@@ -10,6 +10,7 @@ import com.smartlogis.common.infrastructure.MessageResolver;
 import com.smartlogis.common.infrastructure.security.HeaderAuthenticationFilter;
 import com.smartlogis.common.infrastructure.security.RestAccessDeniedHandler;
 import com.smartlogis.common.infrastructure.security.RestAuthenticationEntryPoint;
+import com.smartlogis.common.utils.QuerydslSortUtils;
 
 @Configuration
 public class CommonConfig {
@@ -42,5 +43,11 @@ public class CommonConfig {
 	@ConditionalOnMissingBean
 	public RestAccessDeniedHandler restAccessDeniedHandler() {
 		return new RestAccessDeniedHandler();
+	}
+
+	@Bean
+	@ConditionalOnMissingBean
+	public QuerydslSortUtils querydslSortUtils() {
+		return new QuerydslSortUtils();
 	}
 }

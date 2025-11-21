@@ -26,7 +26,7 @@ dependencyManagement {
 }
 
 dependencies {
-    implementation 'com.github.smartlogismsa:common-module:0.0.7'
+    implementation 'com.github.smartlogismsa:common-module:v0.0.8'
 }
 ```
 
@@ -36,6 +36,14 @@ dependencies {
 
 - common-module 버전을 꼭 확인하고 사용해주세요.
 - [JitPack](https://jitpack.io/#smartlogismsa/common-module) 에서 최신 버전 확인 가능합니다.
+- QueryDsl annotationProcessor를 각 서비스 build.gradle에 추가해주세요.
+
+```groovy
+annotationProcessor "com.querydsl:querydsl-apt:5.1.0:jakarta"
+annotationProcessor "jakarta.annotation:jakarta.annotation-api"
+annotationProcessor "jakarta.persistence:jakarta.persistence-api"
+```
+
 - 아래 의존성들은 common-module 내부에 포함되어 있습니다. 중복 선언 시 충돌 가능성이 있으므로 확인해주세요.
 
 ```groovy
@@ -61,6 +69,9 @@ api 'io.github.resilience4j:resilience4j-circuitbreaker:2.3.0'
 api 'io.github.resilience4j:resilience4j-retry:2.3.0'
 api 'io.github.resilience4j:resilience4j-bulkhead:2.3.0'
 api 'io.github.resilience4j:resilience4j-ratelimiter:2.3.0'
+
+// querydsl
+api 'com.querydsl:querydsl-jpa:5.1.0:jakarta'
 
 // monitoring
 api 'io.micrometer:micrometer-core:1.16.0'
@@ -91,4 +102,11 @@ api 'org.springframework:spring-aspects'
 
 ## 버전 업데이트
 
-- v0.0.7: FeignConfig 추가 - FeignClient 헤더 인증 정보 추가
+- v0.0.7
+    - FeignConfig 추가 - FeignClient 헤더 인증 정보 추가
+    - PageResponse 오류 수정
+- v0.0.8
+    - QueryDsl 설정 추가
+    - QueryDslSortUtils 추가
+        - `QuerydslSortUtils.toOrderSpecifiers("엔티티 클래스", "기본정렬필드" [, "Sort 객체"]);`
+        - `QuerydlsSortUtils.toOrderSpecifiers(User.class, "createdAt", pageable.getSort());`
