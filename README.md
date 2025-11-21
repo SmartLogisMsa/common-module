@@ -26,7 +26,7 @@ dependencyManagement {
 }
 
 dependencies {
-    implementation 'com.github.smartlogismsa:common-module:v0.0.9'
+    implementation 'com.github.smartlogismsa:common-module:v0.0.10'
 }
 ```
 
@@ -39,6 +39,7 @@ dependencies {
 - QueryDsl annotationProcessor를 각 서비스 build.gradle에 추가해주세요.
 
 ```groovy
+implementation 'com.querydsl:querydsl-jpa:5.1.0:jakarta'
 annotationProcessor "com.querydsl:querydsl-apt:5.1.0:jakarta"
 annotationProcessor "jakarta.annotation:jakarta.annotation-api"
 annotationProcessor "jakarta.persistence:jakarta.persistence-api"
@@ -69,9 +70,6 @@ api 'io.github.resilience4j:resilience4j-circuitbreaker:2.3.0'
 api 'io.github.resilience4j:resilience4j-retry:2.3.0'
 api 'io.github.resilience4j:resilience4j-bulkhead:2.3.0'
 api 'io.github.resilience4j:resilience4j-ratelimiter:2.3.0'
-
-// querydsl
-api 'com.querydsl:querydsl-jpa:5.1.0:jakarta'
 
 // monitoring
 api 'io.micrometer:micrometer-core:1.16.0'
