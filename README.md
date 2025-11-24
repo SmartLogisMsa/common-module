@@ -26,7 +26,7 @@ dependencyManagement {
 }
 
 dependencies {
-    implementation 'com.github.smartlogismsa:common-module:v0.0.10'
+    implementation 'com.github.smartlogismsa:common-module:v0.0.11'
 }
 ```
 
@@ -106,7 +106,7 @@ api 'org.springframework:spring-aspects'
 - v0.0.8
     - QueryDsl 설정 추가
     - QueryDslSortUtils 추가
-        - `QuerydslSortUtils.toOrderSpecifiers("엔티티 클래스", "기본정렬필드" [, "Sort 객체"]);`
-        - `QuerydlsSortUtils.toOrderSpecifiers(User.class, "createdAt", pageable.getSort());`
+        - `QuerydslSortUtils.toOrderSpecifiers("Q 클래스", "기본정렬필드" [, "Sort 객체"]);`
+        - `QuerydlsSortUtils.toOrderSpecifiers(Quser.user, "createdAt", pageable.getSort());`
 - v0.0.9
     - PageRequest 오류 수정
